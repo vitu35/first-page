@@ -1,11 +1,219 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi página</title>
+<meta charset="UTF-8">
+<title>Tienda</title>
+
+<style>
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* TITULO */
+.titulo-tienda{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #c9a24d;
+    margin: 30px 0 10px 0;
+    letter-spacing: 3px;
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+.productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* TARJETA PRODUCTO */
+.producto{
+    background: #111;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.nombre-perfume{
+    font-size: 14px;
+    font-weight: bold;
+    color: #c9a24d;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.producto img{
+    width: 100%;
+    border-radius: 12px;
+}
+
+.precio{
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* BOTONES */
+.whatsapp{
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.carrito-btn{
+    padding: 8px;
+    width: 100%;
+    background: #c9a24d;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* CARRITO */
+#carrito{
+    max-width: 400px;
+    margin: 40px auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.mercadopago{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: #009ee3;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* CELULAR */
+@media (max-width: 768px){
+    .productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Hola 👋</h1>
-    <p>Esta es mi primera página en GitHub Pages</p>
+
+<h1 class="titulo-tienda">TIENDA VIRTUAL</h1>
+
+<div class="productos">
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (NEGRO)</div>
+    <img src="Captura4em.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%209AM%20DIVE%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN 9AM DIVE 100ML',78999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (NEGRO)</div>
+    <img src="Captura3em.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%209PM%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN 9PM 100ML',88999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (ROJO)</div>
+    <img src="Captura2em.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%209PM%20ELIXIR%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN 9PM ELIXIR PARFUM 100ML',54999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (ROJO)</div>
+    <img src="Captura1.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%209PM%20REBEL%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN 9PM REBEL 100ML',58999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (CELESTE)</div>
+    <img src="Captura5em.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%20HISTORIC%20OLMEDA%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN HISTORIC OLMEDA 100ML',62999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">CHICAGO THE FINALS (CELESTE)</div>
+    <img src="Captura6em.png">
+    <div class="precio">$45.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%20SUPREMACY%20NOT%20ONLY%20INTENSE%20100ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN SUPREMACY NOT ONLY INTENSE 100ML',96999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">JORDAN JUMPMAN CLASSIC</div>
+    <img src="Captura7em.png">
+    <div class="precio">$20.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%20TURATHI%20BLUE%2090ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN TURATHI BLUE 90ML',77999)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <div class="nombre-perfume">JORDAN JUMPMAN CLASSIC</div>
+    <img src="Captura8em.png">
+    <div class="precio">$20.000</div>
+    <a class="whatsapp" href="https://wa.me/5491138441080?text=Hola,%20quiero%20AFNAN%20TURATHI%20ELECTRIC%2090ML" target="_blank">WhatsApp</a>
+    <button class="carrito-btn" onclick="agregar('AFNAN TURATHI ELECTRIC 90ML',67999)">Agregar al carrito</button>
+</div>
+
+</div>
+
+<div id="carrito">
+    <h2>Carrito</h2>
+    <ul id="lista"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+
+    <a class="mercadopago" href="https://link.mercadopago.com.ar/TULINK" target="_blank">
+        Pagar con Mercado Pago
+    </a>
+
+    <button class="carrito-btn" onclick="vaciarCarrito()">
+        Vaciar carrito
+    </button>
+</div>
+
+<script>
+let total = 0;
+
+function agregar(nombre, precio){
+    total += precio;
+    document.getElementById("total").innerText = total;
+
+    let li = document.createElement("li");
+    li.textContent = nombre + " - $" + precio;
+    document.getElementById("lista").appendChild(li);
+}
+
+function vaciarCarrito(){
+    total = 0;
+    document.getElementById("total").innerText = total;
+    document.getElementById("lista").innerHTML = "";
+}
+</script>
+
 </body>
 </html>
